@@ -3,8 +3,9 @@ package com.expatrio.app.repository;
 import com.expatrio.app.model.Department;
 import com.expatrio.app.model.Role;
 import com.expatrio.app.model.User;
+import com.expatrio.app.repository.rowMappers.UserRowMapper;
+import com.expatrio.app.repository.rowMappers.UserWithDepartmentRowMapper;
 import org.springframework.dao.EmptyResultDataAccessException;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 

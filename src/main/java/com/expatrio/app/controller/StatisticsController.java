@@ -44,7 +44,7 @@ public class StatisticsController {
     public ResponseEntity<Double> getAverageSalaryByDepartment(@PathVariable Long departmentId) {
         Optional<Department> departmentOptional = departmentRepository.findById(departmentId);
 
-        if (departmentOptional.isPresent()) {
+        if (!departmentOptional.isPresent()) {
             return new ResponseEntity(new ApiResponse(false, "Department does not exist!"),
                     HttpStatus.BAD_REQUEST);
         }

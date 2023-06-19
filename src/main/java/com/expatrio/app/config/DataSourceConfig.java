@@ -33,10 +33,6 @@ public class DataSourceConfig {
                 .locations("classpath:db/migration")
                 .load();
 
-        // Optionally, you can customize Flyway configuration further
-        // flyway.setBaselineOnMigrate(true);
-        // flyway.setValidateOnMigrate(false);
-        // ...
 
         flyway.migrate();
 

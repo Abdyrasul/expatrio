@@ -56,17 +56,16 @@ public class AuthController {
         if (userPrincipal.getAuthorities().stream().noneMatch(role -> role.getAuthority().equals("ADMIN"))) {
             // User is not an ADMIN, return an unauthorized response
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
-        }else{
-            System.out.println("username: "+userPrincipal.getUsername()+ "authority size: "+userPrincipal.getAuthorities().size());
-            System.out.println("role: "+userPrincipal.getAuthorities().stream().filter(x-> Objects.equals(x.getAuthority(), "ADMIN")).findAny().orElse(null
-            ).getAuthority());
-
         }
+//            System.out.println("username: "+userPrincipal.getUsername()+ "authority size: "+userPrincipal.getAuthorities().size());
+//            System.out.println("role: "+userPrincipal.getAuthorities().stream().filter(x-> Objects.equals(x.getAuthority(), "ADMIN")).findAny().orElse(null
+//            ).getAuthority());
+
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
         String jwt = tokenProvider.generateToken(authentication);
-        System.out.println("token: "+jwt);
+//        System.out.println("token: "+jwt);
         return ResponseEntity.ok(new JwtAuthenticationResponse(jwt));
     }
 

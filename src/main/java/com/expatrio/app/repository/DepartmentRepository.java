@@ -2,7 +2,7 @@ package com.expatrio.app.repository;
 
 import com.expatrio.app.model.Department;
 
-import org.springframework.jdbc.core.JdbcTemplate;
+import com.expatrio.app.repository.rowMappers.DepartmentRowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
@@ -10,8 +10,6 @@ import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
-import java.sql.PreparedStatement;
-import java.sql.Statement;
 import java.util.*;
 
 @Repository

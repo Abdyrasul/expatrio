@@ -1,4 +1,4 @@
-package com.expatrio.app.repository;
+package com.expatrio.app.repository.rowMappers;
 
 import com.expatrio.app.model.Department;
 import org.springframework.jdbc.core.RowMapper;

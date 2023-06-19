@@ -58,7 +58,6 @@ public class SecurityConfig {
                 .and()
                 .authorizeRequests()
                 .antMatchers("/",
-                        "/favicon.ico",
                         "/**/*.png",
                         "/**/*.gif",
                         "/**/*.svg",
@@ -72,14 +71,9 @@ public class SecurityConfig {
                 .antMatchers("/api/auth/signing")
                 .permitAll()
                 .antMatchers("/api/users/**", "/api/departments/**")
-//                .permitAll()
                 .hasAuthority("ADMIN") // Restrict access to ADMIN role
-//                .antMatchers(HttpMethod.GET, "/api/polls/**", "/api/users/**")
-//                .permitAll()
                 .anyRequest()
-                .authenticated()
-                .and()
-                .exceptionHandling().accessDeniedPage("/403");
+                .authenticated();
 
         // Add our custom JWT security filter
         http.addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
